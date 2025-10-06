@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI 모의 면접 플랫폼 – 상세</title>
+  <style>
+    :root{ --navy:#151833; --mustard:#f0b348; --ink:#0f1228; --paper:#fff; }
+    *{box-sizing:border-box;font-family:Inter, Pretendard, system-ui, -apple-system, Segoe UI, Roboto, 'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+    body{margin:0;background:#fafafa;color:#111}
+    .wrap{max-width:1080px;margin:0 auto;padding:20px}
+    .topbar{position:sticky;top:0;background:#fff9;backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06);z-index:10}
+    .topbar-inner{display:flex;gap:12px;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:12px 20px}
+    .brand{font-weight:900;color:var(--navy)}
+    .act{display:flex;gap:8px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,0,0,.12);background:#fff;border-radius:999px;padding:8px 12px;font-size:14px;text-decoration:none;color:#111;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    .btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+    .pill{border-radius:999px;padding:.35rem .7rem;font-size:.85rem;background:#fff;border:1px solid rgba(0,0,0,.08)}
+    h1{font-size:32px;margin:18px 0 10px;font-weight:900;color:#222}
+    h2{font-size:20px;margin:18px 0 8px;font-weight:800;color:#222}
+    p{line-height:1.7}
+    .grid{display:grid;gap:18px}
+    .two{grid-template-columns:1fr 1fr}
+    @media (max-width:900px){ .two{grid-template-columns:1fr} }
+    .card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.04);overflow:hidden}
+    .section{padding:18px}
+    .muted{color:#666}
+    /* gallery */
+    .gallery{position:relative;background:#0f1228;border-bottom:1px solid rgba(0,0,0,.06)}
+    .track{display:flex;transition:transform .5s cubic-bezier(.22,.61,.36,1)}
+    .slide{min-width:100%;height:0;padding-bottom:56.25%;position:relative}
+    .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .gbtn{position:absolute;top:50%;transform:translateY(-50%);background:#fff;opacity:.9;border:1px solid rgba(0,0,0,.1);border-radius:999px;padding:.35rem .55rem}
+    .prev{left:12px} .next{right:12px}
+    .dots{position:absolute;bottom:10px;left:0;right:0;display:flex;gap:6px;justify-content:center}
+    .dot{width:8px;height:8px;border-radius:999px;background:#ffffff77}
+    .dot.on{background:#fff}
+    ul{padding-left:18px;margin:8px 0}
+    li{margin:4px 0}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">AI 모의 면접 플랫폼</div>
+      <div class="act">
+        <a class="btn" href="https://github.com/TP9NS" target="_blank">GitHub</a>
+        <a class="btn" href="#" target="_blank">Google Slides</a>
+        <button class="btn" onclick="window.close()">창 닫기 ✕</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <div class="gallery" data-gal>
+        <div class="track">
+          <div class="slide"><img src="assets/projects/ai/cover.jpg" alt="메인" onerror="this.src='https://via.placeholder.com/1600x900/151833/ffffff?text=cover.jpg'"/></div>
+          <div class="slide"><img src="assets/projects/ai/web-1.jpg" alt="웹" onerror="this.src='https://via.placeholder.com/1600x900/1b1f40/ffffff?text=web-1.jpg'"/></div>
+          <div class="slide"><img src="assets/projects/ai/mobile-1.jpg" alt="모바일" onerror="this.src='https://via.placeholder.com/900x1600/1c214a/ffffff?text=mobile-1.jpg'"/></div>
+        </div>
+        <button class="gbtn prev">‹</button>
+        <button class="gbtn next">›</button>
+        <div class="dots"></div>
+      </div>
+      <div class="section">
+        <h1>프로젝트 개요</h1>
+        <p class="muted">6인 팀 · 2025.07–2025.09</p>
+        <p>AI를 활용해 사용자 맞춤 면접 질문을 생성하고, 표정/동작 분석과 타임스탬프 기반 피드백을 제공하는 플랫폼입니다. React Native 앱과 LangGraph 기반 분석 파이프라인을 연동했습니다.</p>
+        <div class="tags">
+          <span class="pill">Spring Boot</span><span class="pill">React</span><span class="pill">React Native</span><span class="pill">LangGraph</span><span class="pill">AWS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card section">
+        <h2>주요 기능</h2>
+        <ul>
+          <li>사용자 맞춤 면접 질문 생성</li>
+          <li>Koelectra 기반 꼬리질문 판단 및 흐름 제어</li>
+          <li>표정/동작 분석 채점 + 타임스탬프 피드백</li>
+          <li>결과 저장 및 관리자 통계</li>
+          <li>모바일 앱 연동, 소셜 로그인</li>
+        </ul>
+      </div>
+      <div class="card section">
+        <h2>기여 내용</h2>
+        <ul>
+          <li>면접(답변) 흐름 설계 및 구현</li>
+          <li>LangGraph 파이프라인/임베딩 개선</li>
+          <li>AWS ECR/ECS, IaC 배포 파이프라인</li>
+          <li>OAuth2 소셜 로그인, JWT 인증/인가</li>
+        </ul>
+      </div>
+      <div class="card section">
+        <h2>기술 스택</h2>
+        <div class="grid two">
+          <div>
+            <h3>Backend</h3>
+            <ul>
+              <li>Spring Boot, MariaDB, Redis</li>
+              <li>Flask/FastAPI (분석 API)</li>
+            </ul>
+            <h3>AI</h3>
+            <ul>
+              <li>LangGraph, MediaPipe, Deepface, llama3</li>
+              <li>ChromaDB</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Frontend/Mobile</h3>
+            <ul>
+              <li>React, Next.js, React Native, Tailwind</li>
+            </ul>
+            <h3>Infra/CI</h3>
+            <ul>
+              <li>GitHub Actions, AWS ECR/ECS, IAM</li>
+              <li>Terraform, CloudWatch, Nginx</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card section">
+        <h2>트러블 슈팅</h2>
+        <div class="grid two">
+          <div>
+            <h3>문제 1</h3>
+            <p class="muted">영상/음성 동시 전송으로 처리 지연</p>
+            <p><b>해결:</b> 필요한 단계만 동기 처리, 나머지는 비동기 처리 + Redis 버퍼.
+          </div>
+          <div>
+            <h3>문제 2</h3>
+            <p class="muted">분석 종료 전 결과 요청으로 동기화 붕괴</p>
+            <p><b>해결:</b> 웹소켓 유지 + Redis Done 플래그로 완료 기준 통일.</p>
+          </div>
+          <div>
+            <h3>문제 3</h3>
+            <p class="muted">수평 확장 시 웹소켓 서버 불일치로 이벤트 유실</p>
+            <p><b>해결:</b> Redis Pub/Sub으로 분배.</p>
+          </div>
+          <div>
+            <h3>문제 4</h3>
+            <p class="muted">모바일 OAuth2 리다이렉션 정책으로 로그인 실패</p>
+            <p><b>해결:</b> 브릿지 컨트롤러로 모바일/웹 세션 분리, 토큰 교환 흐름.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // mini gallery
+    (function(){
+      const g=document.querySelector('[data-gal]'); if(!g) return;
+      const t=g.querySelector('.track'); const slides=[...g.querySelectorAll('.slide')];
+      const prev=g.querySelector('.prev'); const next=g.querySelector('.next'); const dots=g.querySelector('.dots');
+      let i=0,sx=0; function draw(){ t.style.transform=`translateX(${-i*100}%)`; [...dots.children].forEach((d,di)=>d.classList.toggle('on',di===i)); }
+      slides.forEach((_,si)=>{ const d=document.createElement('div'); d.className='dot'+(si===0?' on':''); d.onclick=()=>{i=si;draw()}; dots.appendChild(d); });
+      prev.onclick=()=>{ i=(i-1+slides.length)%slides.length; draw(); };
+      next.onclick=()=>{ i=(i+1)%slides.length; draw(); };
+      g.addEventListener('pointerdown',e=>{ sx=e.clientX; g.setPointerCapture(e.pointerId); });
+      g.addEventListener('pointerup',e=>{ const dx=e.clientX-sx; if(Math.abs(dx)>40){ i=dx>0? (i-1+slides.length)%slides.length:(i+1)%slides.length; draw(); } });
+      draw();
+    })();
+  </script>
+</body>
+</html>
